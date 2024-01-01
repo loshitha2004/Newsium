@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Template from "../Components/Template";
+import Heading from "../Components/Heading";
 const Tech = () => {
   const [data, setData] = useState([]);
   const fetchData = async () => {
     const response = await fetch(
-      "https://newsapi.org/v2/everything?q=technology&language=en&apiKey=9ec978a1e3994be79f7eae170068665a"
+      "https://newsapi.org/v2/everything?q=technology&language=en&apiKey=447c15eae2f34dd0876ad722cde707f4"
     );
     if (!response.ok) {
       throw new Error("Data could not be fetched");
@@ -24,6 +25,7 @@ const Tech = () => {
   }, []);
   return (
     <div className="min-h-screen bg-Secondary">
+      <Heading Heading={"Technology"} title={"For Techies"}/>
       <Template Data={data} />
     </div>
   );

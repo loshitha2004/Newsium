@@ -12,7 +12,9 @@ export default {
         Final:'#E3B448'
       },
       fontFamily:{
-        Poppins:'Poppins'
+        Poppins:'Poppins',
+        Monoton:'Monoton',
+        Dancing:'Dancing Script',
       }
     },
   },

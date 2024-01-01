@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Template from "../Components/Template";
+import ScaleLoader from "react-spinners/ScaleLoader";
+import Heading from "../Components/Heading";
 const Anime = () => {
   const [data, setData] = useState([]);
   const fetchData = async () => {
     const response = await fetch(
-      "https://newsapi.org/v2/everything?q=anime&language=en&apiKey=9ec978a1e3994be79f7eae170068665a"
+      "https://newsapi.org/v2/everything?q=anime&language=en&apiKey=447c15eae2f34dd0876ad722cde707f4"
     );
     if (!response.ok) {
       throw new Error("Data could not be fetched");
@@ -22,11 +24,30 @@ const Anime = () => {
         console.log(e.message);
       });
   }, []);
+  const [loading, setLoading] = useState(false);
+  const [visible, setVisible] = useState("");
+  const [visible1, setVisible1] = useState("hidden");
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setVisible("hidden");
+      setLoading(false);
+      setVisible1("");
+    }, 2000);
+  }, []);
   return (
-    <div className="min-h-screen bg-Secondary">
-      <Template Data={data} />
+    <div>
+      <div
+        className={`bg-Primary flex items-center justify-center min-h-screen z-auto ${visible}`}
+      >
+        <ScaleLoader color={"white"} loading={loading} size={50} />
+      </div>
+      <div className={`min-h-screen bg-Secondary ${visible1}`}>
+        <Heading Heading={"Anime"} title={"For Anime Lovers"}/>
+        <Template Data={data} />
+      </div>
     </div>
   );
-}
+};
 
-export default Anime
+export default Anime;

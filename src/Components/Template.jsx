@@ -2,7 +2,7 @@ import React from "react";
 const Template = ({ Data }) => {
   return (
     <div>
-      <div className="container mx-auto py-24 px-8 ">
+      <div className="container mx-auto py-10 px-8 ">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {Data.slice(9,50).filter(item=>item.urlToImage).map((dat)=> {
             return (
@@ -13,11 +13,11 @@ const Template = ({ Data }) => {
                 <div className="p-2">
                   <p className="text-lg md:text-2xl font-bold mb-2">{dat.title}</p>
                   <p className="text-sm">{dat.content}</p>
-                  <p>
+                  <p className="font-Dancing ">
                     Author: <span>{dat.author}</span>
                   </p>
                   <div className="p-3 ">
-                  <a href={dat.url} target="blank" className="bg-transparent border border-Primary hover:  p-2 rounded-md text-Primary">
+                  <a href={dat.url} target="blank" className="bg-transparent border border-Primary hover:  p-2 rounded-md text-Primary active:bg-Primary active:text-white active:ease-out " >
                      Additional info
                   </a>
                   </div>

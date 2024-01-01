@@ -5,7 +5,6 @@ import Space from './Pages/Space'
 import Stock from './Pages/Stock'
 import Tech from './Pages/Tech'
 import Layout from './Layout'
-
 function App() {
   return (
     <>

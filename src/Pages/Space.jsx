@@ -6,7 +6,7 @@ const Space = () => {
   const [data, setData] = useState([]);
   const fetchData = async () => {
     const response = await fetch(
-      "https://newsapi.org/v2/everything?q=space&language=en&apiKey=447c15eae2f34dd0876ad722cde707f4"
+      "http://newsapi.org/v2/everything?q=space&language=en&apiKey=447c15eae2f34dd0876ad722cde707f4"
     );
     if (!response.ok) {
       throw new Error("Data could not be fetched");
